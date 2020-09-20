@@ -10,13 +10,45 @@ namespace Kenashkov\ErpApi\Interfaces;
  */
 interface ErpInterface
 {
+
+    /**
+     * Get the API url in use
+     * @return string
+     */
     public function get_api_url(): string;
 
+    /**
+     * Get the API token in use
+     * @return string
+     */
     public function get_api_token(): string;
 
-    public function update_product(ProductInterface $Product, ?\stdClass &$Response = NULL): string;
+    /**
+     * Used for both updategin existing products and creating new ones.
+     * @param ProductInterface $Product
+     * @return string
+     */
+    public function update_product(ProductInterface $Product): string;
 
-    public function delete_product(ProductInterface $Product, ?\stdClass &$Response = NULL): void;
+    /**
+     * Deletes the provided product
+     * @param ProductInterface $Product
+     */
+    public function delete_product(ProductInterface $Product): void;
+
+    /**
+     * Returns a product from the ERP based on ERP compatible product from the local app
+     * @param ProductInterface $Product
+     * @return ProductInterface
+     */
+    public function get_product(ProductInterface $Product): ProductInterface;
+
+    /**
+     * Returns a product form the EPR by product_erp_id
+     * @param string $product_erp_id
+     * @return ProductInterface
+     */
+    public function get_product_by_id(string $product_erp_id): ProductInterface;
 
     /**
      * Returns an array of ProductInterface.
