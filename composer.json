@@ -1,0 +1,26 @@
+{
+    "name": "kenashkov/erp-api",
+    "type": "library",
+    "description": "Generic API for interacting with ERPs",
+    "keywords": ["erp","api"],
+    "homepage": "https://github.com/kenashkov/erp-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vesko Kenashkov",
+            "email": "kenashkov@gmail.com",
+            "homepage": "http://vesko.blogs.azonmedia.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "azonmedia/components": "dev-master",
+        "composer/composer": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kenashkov\\ErpApi\\": "app/src/"
+        }
+    }
+}
