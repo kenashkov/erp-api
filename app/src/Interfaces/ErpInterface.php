@@ -20,11 +20,11 @@ interface ErpInterface
 
     /**
      * Returns an array of ProductInterface.
-     * It is better to return an array of defined structure than just an twodimensional associative array that is not validated.
+     * It is better to return an array of defined structure than just an two-dimensional associative array that is not validated.
      * @param string $class_name
      * @return ProductInterface[]
      */
-    public function get_products(): array;
+    public function get_products(int $page = 0, int $page_size = 0): array;
 
 
 }
